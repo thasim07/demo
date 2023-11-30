@@ -1,0 +1,72 @@
+Docker
+
+->Handling proxies with WebDriverManager
+ 
+WebDriverManager.chromedriver().proxy("http://username:password@mycompanyproxy.com:port").setup();
+
+using docker,
+
+->we can work on different browser version seamlessly without any issues 
+---------------------------------------------
+Virtualization vs containerization
+
+virtualization- physical VDI eg:citrix
+
+App -bin/lib- GuestOS-- Hypervisor layer--infra layer
+
+disadvantage
+1) memory allocation issue
+2)bootup problem
+
+advantage
+
+1)multiple operating system can be used in same machine
+
+Containerization:
+
+App-Bin/lib--Container Engine--operating system layer--Infra layer 
+
+---conatainers can run on top of the VM
+---------------------------------------------------
+
+Server- long running program otherwise called docker daemon
+RestAPI- interface to talk to daemon
+Client-cmd
+
+---------------
+
+Software as images
+install and run app as containers
+
+Docker- platform for developing, Shipping, Running App
+
+1)shipping our test automation frmework as image 
+2)running the test in chrome,firefox cointainers with/without selenium grid
+
+--------------------------------------------
+Docker image(Software)
+ 
+Containers----
+Selenium/standalone-chrome
+Elastic search
+Devops- jenkins
+
+ 
+How to Download container?
+
+>>docker pull busybox(this is a container)
+tag: tagname of the container
+ 
+------------
+commands:
+
+>>>docker image pull selenium/standalone-chrome   //used to pull the container
+>>>docker container create selenium/standalone-chrome //used to create the container
+//after that we will get a ID
+>>> docker container start ID //start the container using ID
+>>>docker container ps  //checking the status of the container only on running state
+>>>docker container stop ID //used to stop the container
+>>>docker container ps -a // -a shows all the container
+>>>docker container rm ID  // to remove the container
+
+
