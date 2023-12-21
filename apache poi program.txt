@@ -1,0 +1,161 @@
+1)how to get text from webpage and store the text in excel using selenium testng
+
+
+
+    Set up your Selenium project: Make sure you have a Selenium WebDriver set up and configured properly. You can use the WebDriver for the browser of your choice (e.g., Chrome, Firefox).
+
+    Set up TestNG: Ensure that you have TestNG integrated into your project. TestNG allows you to manage and execute your test cases efficiently.
+
+    Open the webpage: Use Selenium WebDriver to navigate to the webpage from which you want to extract the text.
+
+    Locate the elements: Identify the HTML elements that contain the text you want to extract. You can use various locators like ID, name, class name, XPath, etc.
+
+    Extract the text: Use Selenium WebDriver to get the text from the identified elements.
+
+    Store the text in Excel: Use Apache POI or another library to write the extracted text to an Excel file.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class WebpageTextToExcelTest {
+
+    private WebDriver driver;
+
+    @BeforeTest
+    public void setup() {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void extractTextToExcel() {
+        driver.get("https://example.com"); // Replace with the URL of the webpage you want to extract from
+
+        WebElement element = driver.findElement(By.xpath("//div[@class='example-class']")); // Replace with the appropriate locator
+
+        String extractedText = element.getText();
+
+        // Store the text in Excel
+        try (FileOutputStream outputStream = new FileOutputStream("output.xlsx")) {
+            Workbook workbook = new XSSFWorkbook();
+            Sheet sheet = workbook.createSheet("Webpage Text");
+            Row row = sheet.createRow(0);
+            Cell cell = row.createCell(0);
+            cell.setCellValue(extractedText);
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
+    }
+}
+
+
+
+2)how to get text from webpage and store the text in notepad using selenium testng
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WebpageTextToNotepadTest {
+
+    private WebDriver driver;
+
+    @BeforeTest
+    public void setup() {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void extractTextToNotepad() {
+        driver.get("https://example.com"); // Replace with the URL of the webpage you want to extract from
+
+        WebElement element = driver.findElement(By.xpath("//div[@class='example-class']")); // Replace with the appropriate locator
+
+        String extractedText = element.getText();
+
+        // Store the text in a text file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+            writer.write(extractedText);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
+    }
+}
+
+
+
+3)Read data from pdf
+
+
+
+package TestNgdemo;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
+import org.testng.Assert;
+
+public class Pdftext {
+	
+	public static void main(String[]args) {
+		
+		try {
+			PDDocument document= PDDocument.load(new File("C://Users//Admin//Downloads//Thasim.pdf"));
+			
+			//numberofpages
+			
+			int numberOfPages = document.getNumberOfPages();
+			System.out.println(numberOfPages);
+			Assert.assertEquals(numberOfPages, 3);
+			
+			//Readtextfrompdf
+			
+			PDFTextStripper textstripper=new PDFTextStripper();
+			String text = textstripper.getText(document);
+			System.out.println(text);
+			
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}
+

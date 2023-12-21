@@ -1,0 +1,60 @@
+1)String reverse using stringbuilder
+2)Number Reverse
+3)fibanocci series
+4)Maximum and minimum value in ARRAY
+5)Duplicate characters in a single word 
+6)find Duplicate words
+7)Swapping two numbers
+8)Odd or Even in integer
+9)Numbers of words in a String
+10)vowels in a given string
+11)prime number program
+12)Linear search in array
+13)Binary search in array
+14)Sorting an array in Assending order and desending using bubble sort method
+15)Sorting an array in Assending order and desending using build-in method
+16)Read data from text file
+17)How To Write Data Into Text File
+18)Reverse numbers in array
+19)broken image using selenium java
+20)Count Number Of Digits in A Number
+21)Count Number Of EVEN & ODD Digits in A Number
+22)Count Sum Of Digits in a Number
+23)Find Largest Of 3 Numbers
+24)How To Generate Random Numbers
+25)Sum of Elements in Array
+26)Missing number in Array
+27)Equality Of Two Arrays
+28)Print Even & Odd Numbers from an Array
+29)reverse a string in Java
+30)palindrome in number 
+31)palindrome in string
+32)Reverse A Sentence Word By Word?
+
+Input: Oranium Tech is the software training centre
+Output: centre training software the is Tech Oranium
+33)WAP to Reverse Each Word Of A String.
+
+Eg: Input  : Oranium Tech
+    Output : muinarO hceT
+34)WAP To Reverse An Array Without Using An Additional Array?
+
+Array Before Reverse : [4, 5, 8, 9, 10]
+Array After Reverse : [10, 9, 8, 5, 4]
+35)WAP To Reverse The String With Preserving The Position Of Spaces.
+Eg:
+Input:    i am studying in Oranium Tech
+Output:   h ce TmuinarO ni gniydut smai
+36)WAP to count the occurrences of each character?
+result:
+
+a: 1
+h: 1
+i: 1
+m: 1
+s: 1
+t: 1
+37)occurences of single char
+38)How to remove all white spaces from a String in Java?
+39)WAP to Swap two Strings Without Using any Third Variable.
+40)WAP to remove special characters/alpha and sum up the numbers. 

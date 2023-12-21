@@ -1,0 +1,183 @@
+public class Reversearray{
+
+public static void main(String[]args){
+
+int numbers[]={21,43,45,67,70};
+
+for(int i=0;i<numbers.length;i++){
+
+int reversed=reverseInteger(numbers[i]);
+System.out.println("Reverse an integer"+numbers[i]+":"+reversed);
+
+
+}
+}
+
+public static int reverseInteger(int number){
+
+String numberString= Integer.toString(number);
+String reversestring=new StringBuilder(numberString).reverse().tostring();
+
+return Integer.parseInt(reversestring);
+
+}
+
+}
+
+
+-------------------------------------broken image------------
+
+public class brokenimage(){
+
+public static void main(String[]args){
+
+imagecheck();
+
+}
+
+public static void imagecheck(){
+
+WebDriverManager.chromedriver().setup();
+WebDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("");
+
+List<WebElement> images=driver.findElements(By.tagname("img"));
+System.out.println(images.size());
+
+for(WebElements image: images){
+
+String imagesrc=image.getattribute("src");
+
+try{
+URL url=new URL(imagesrc);
+URLConnection urlconnection=url.openConnection();
+HttpURLconnection httpurlconnection=(HttpURLconnection)urlconnection;
+httpurlconnection.setConnectTimeout(5000);
+httpurlconnection.connect();
+
+if(httpurlconnection.getResponsecode==200){
+
+System.out.println(imagesrc+">>"+httpurlconnection.getResponsecode+">>"+httpurlconnection.getResponsecodeMessage());
+}
+else{
+
+System.err.println(imagesrc+">>"+httpurlconnection.getResponsecode+">>"+httpurlconnection.getResponsecodeMessage());
+
+}
+httpurlconnection.disconnect();
+}
+
+catch(exception e){
+
+System.err.println(imagesrc);
+}
+}
+driver.quit();
+}
+
+}
+
+
+------------------data provider------
+
+
+public class dataprovider{
+
+public String[][] getdata()
+{
+
+
+
+
+public class userlogin{
+
+static Hashmap<String, String> logindata(){
+
+  Hashmap<String, String>hm=new Hashmap<String, String>();
+  hm.put("x","Admin@admin123");
+hm.put("y","Admin@admin12");
+
+return hm;
+}
+
+public static void main(String[]args){
+
+WebDriverManager.chromeDriver().setup();
+WebDriver driver= new ChromeDriver();
+driver.manage.window().maximize();
+driver.manage().Timeout().implicitlywait(20,Timeunit.SECONDS);
+driver.get("path");
+
+String data=logindata().get("x");
+String []arr=data.split("@");
+
+driver.findElement(by.id()).sendkeys(arr[0]);
+driver.findElement(by.id()).sendkeys(arr[1]);
+button.click();
+}
+
+if(driver.getTitle().equals(""))
+{
+Syso(passeed);
+}
+
+else
+{
+syso(failed);
+}
+
+driver.quit();
+}
+
+
+public class Simpleprogram{
+
+public static void main(String[]args)
+{
+
+HashMap<String, Integer>hm=new HashMap<String, Integer>();
+hm.put("key1", 10);
+hm.put("key2", 70);
+hm.put("key3", 40);
+hm.put("key4", 60);
+
+for(Map.Entry<String, Integer> entry:hm.entrySet()){
+
+if(entry.getValue()>10){
+
+Syso(entry.getKey()+":"+entry.getValue());
+
+}
+
+}
+}
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
